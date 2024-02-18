@@ -16,7 +16,23 @@
 */
 """
 
-import agenda
+def agregar_contacto(agenda, nombre, telefono):
+    agenda[nombre] = telefono
+
+def ver_contactos(agenda):
+    pass
+
+def eliminar_contacto(agenda, nombre):
+    pass
+
+def buscar_contacto(agenda, nombre):
+    pass
+
+def guardar_contactos(agenda, archivo_agenda):
+    pass
+
+def cargar_contactos(archivo_agenda):
+    pass
 
 agenda = {}
 
@@ -30,38 +46,35 @@ while True:
     print("6. Cargar contactos desde un archivo")
     print("7. Salir")
 
-    opcion = input("\nSelecciona una opción (1-7): \n")
+    opcion = input("\nSelecciona una opción (1-7): ")
 
     if opcion == "1":
-        nombre = input("\nIntroduce el nombre del contacto: \n")
-        telefono = input("\nIntroduce el teléfono del contacto: \n")
-        agenda.agregar_contacto(nombre, telefono)
+        nombre = input("\nIntroduce el nombre del contacto: ")
+        telefono = input("Introduce el teléfono del contacto: ")
+        agregar_contacto(agenda, nombre, telefono)
     elif opcion == "2":
-        agenda.ver_contactos()
+        if agenda:
+            print("\nContactos en la agenda:")
+            ver_contactos(agenda)
+        else:
+            print("No hay contactos en la agenda.")
     elif opcion == "3":
-        nombre = input("\nIntroduce el nombre del contacto que quieres eliminar: \n")
-        agenda.eliminar_contacto(nombre)
+        nombre = input("\nIntroduce el nombre del contacto que quieres eliminar: ")
+        eliminar_contacto(agenda, nombre)
     elif opcion == "4":
-        nombre = input("\nIntroduce el nombre del contacto que quieres buscar: \n")
-        agenda.buscar_contacto(nombre)
+        nombre = input("\nIntroduce el nombre del contacto que quieres buscar: ")
+        buscar_contacto(agenda, nombre)
     elif opcion == "5":
-        archivo_agenda = input("\nIntroduce el nombre del archivo en el que quieres guardar los contactos: \n")
-        agenda.guardar_contactos(archivo_agenda)
+        if agenda:
+            archivo_agenda = input("\nIntroduce el nombre del archivo en el que quieres guardar los contactos: ")
+            guardar_contactos(agenda, archivo_agenda)
+        else:
+            print("No hay contactos para guardar.")
     elif opcion == "6":
-        archivo_agenda = input("\nIntroduce el nombre del archivo del cual quieres cargar los contactos: \n")
-        agenda.cargar_contactos(archivo_agenda)
+        archivo_agenda = input("\nIntroduce el nombre del archivo del cual quieres cargar los contactos: ")
+        agenda = cargar_contactos(archivo_agenda)
     elif opcion == "7":
-        print("\nGracias por utilizar la aplicación de agenda de contactos. ¡Adiós!\n")
+        print("\nGracias por utilizar la aplicación de agenda de contactos. ¡Adiós!")
         break
     else:
         print("\nOpción no válida. Por favor, selecciona una opción válida (1-7)")
-
-if __name__ == "__main__":
-    def leer_archivo(agenda):
-        try:
-            with open(agenda.py, 'r') as archivo:
-                contenido = archivo.read()
-                print("Contenido del archivo:")
-                print(contenido)
-        except FileNotFoundError:
-            print(f"El archivo '{agenda.py}' no se encontró.")
