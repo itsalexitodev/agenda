@@ -1,5 +1,3 @@
-# -*- coding: iso-8859-1 -*-
-
 """
 /*
  * Se pide que desarrollen EN PAREJAS una aplicación de agenda de contactos en Python con las siguientes funcionalidades:
