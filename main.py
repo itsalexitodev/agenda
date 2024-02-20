@@ -19,18 +19,32 @@ def agregar_contacto(agenda, nombre, telefono):
     agenda[nombre] = telefono
 
 def ver_contactos(agenda):
-  pass
+    if agenda:
+        for nombre, telefono in agenda.items():
+            print(f'\nNombre: {nombre}, \nTeléfono: {telefono}\n')
+    else:
+        print("\nNo hay ningún contacto\n")
 
 def eliminar_contacto(agenda, nombre):
-    pass
+    if nombre == agenda:
+        del agenda[nombre]
+        print(f'\nse ha eliminado el contacto {nombre}, {telefono}\n')
+    else:
+        print(f'\nel contacto {nombre} no existe\n')
 
 def buscar_contacto(agenda, nombre):
-    pass
+    if nombre in agenda:
+        print(f'\nel contcato es:\n\nNombre: {nombre}, \nTeléfono: {telefono}\n')
+    else:
+        print(f'\nel nombre {nombre} no se ha encontrado\n')
+
 
 def guardar_contactos(agenda, archivo_agenda):
     pass
 
 def cargar_contactos(agenda, archivo_agenda):
+    
+    return agenda
     pass
   
 
