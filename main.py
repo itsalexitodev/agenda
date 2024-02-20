@@ -43,10 +43,7 @@ def guardar_contactos(agenda, archivo_agenda):
     pass
 
 def cargar_contactos(agenda, archivo_agenda):
-    
-    return agenda
-    pass
-  
+    pass  
 
 agenda = {}
 
