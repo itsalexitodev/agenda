@@ -21,7 +21,7 @@ def agregar_contacto(agenda, nombre, telefono):
         agenda[nombre] = telefono
         print(f'\nContacto {nombre} agregado correctamente con el número {telefono}\n')
 
-def ver_contactos(agenda):
+def ver_contactos(agenda):   
     if agenda:
         for nombre, telefono in agenda.items():
             print(f'\nNombre: {nombre}, \nTeléfono: {telefono}\n')
@@ -40,7 +40,6 @@ def buscar_contacto(agenda, nombre):
         print(f'\nel contcato es:\n\nNombre: {nombre}, \nTeléfono: {telefono}\n')
     else:
         print(f'\nel nombre {nombre} no se ha encontrado\n')
-
 
 def guardar_contactos(agenda, archivo_agenda):
     pass
@@ -65,10 +64,11 @@ while True:
     if opcion == "1":
         nombre = input("\nIntroduce el nombre del contacto: \n")
         telefono = None
+
         while True:
             try:
                 telefono = int(input("\nIntroduce el teléfono del contacto: \n"))
-                break  
+                break           
             except ValueError:
                 print("\nPor favor, introduce un número válido.")
                 continue
