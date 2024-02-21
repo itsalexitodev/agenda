@@ -15,7 +15,11 @@
 """
 
 def agregar_contacto(agenda, nombre, telefono):
-    agenda[nombre] = telefono
+    if nombre in agenda:
+        print(f'\nEl contacto {nombre}, {telefono} ya existe en la agenda\n')
+    else:
+        agenda[nombre] = telefono
+        print(f'\nContacto {nombre} agregado correctamente con el número {telefono}\n')
 
 def ver_contactos(agenda):
     if agenda:
@@ -60,7 +64,14 @@ while True:
 
     if opcion == "1":
         nombre = input("\nIntroduce el nombre del contacto: \n")
-        telefono = input("\nIntroduce el teléfono del contacto: \n")
+        telefono = None
+        while True:
+            try:
+                telefono = int(input("\nIntroduce el teléfono del contacto: \n"))
+                break  
+            except ValueError:
+                print("\nPor favor, introduce un número válido.")
+                continue
         agregar_contacto(agenda, nombre, telefono)
 
     elif opcion == "2":
