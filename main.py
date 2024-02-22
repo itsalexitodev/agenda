@@ -42,14 +42,27 @@ def buscar_contacto(agenda, nombre):
         print(f'\nel nombre {nombre} no se ha encontrado\n')
 
 def guardar_contactos(agenda, archivo_agenda):
-    pass
+    with open(archivo_agenda, 'w') as file:
+        for nombre in agenda.items():
+            file.write({nombre}:{telefono})
+
+
 
 def cargar_contactos(agenda, archivo_agenda):
-    pass  
+     with open(archivo_agenda, 'r') as file:
+          for line in f:
+            nombre, telefono = line.strip().split(':')
+            agenda[nombre] = telefono
+            return agenda
+      
 
 agenda = {}
 
 while True:
+    print("\n")
+    print(" ############################# ")
+    print(" # AGENDA - CONTACTOS - 2024 # ")
+    print(" ############################# ")
     print("\n¿Qué quieres hacer?\n")
     print("1. Agregar contacto")
     print("2. Ver contactos")
