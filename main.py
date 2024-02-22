@@ -13,7 +13,7 @@
  * 10. Guardar_contactos(nombre_archivo): Guarda los contactos en un archivo.
 */
 """
-
+#agrega un contacto en un dicionario vacio llamado agenda
 def agregar_contacto(agenda, nombre, telefono):
     if nombre in agenda:
         print(f'\nEl contacto {nombre}, {telefono} ya existe en la agenda\n')
@@ -21,6 +21,7 @@ def agregar_contacto(agenda, nombre, telefono):
         agenda[nombre] = telefono
         print(f'\nContacto {nombre} agregado correctamente con el número {telefono}\n')
 
+#permite ver un contaco del dicionario agenda
 def ver_contactos(agenda):   
     if agenda:
         for nombre, telefono in agenda.items():
@@ -28,6 +29,7 @@ def ver_contactos(agenda):
     else:
         print("\nNo hay ningún contacto\n")
 
+#elimina un contacto del dccionario agenda
 def eliminar_contacto(agenda, nombre):
     if nombre == agenda:
         del agenda[nombre]
@@ -35,25 +37,24 @@ def eliminar_contacto(agenda, nombre):
     else:
         print(f'\nel contacto {nombre} no existe\n')
 
+#busca un contacto en el dicionario llamado agenda
 def buscar_contacto(agenda, nombre):
     if nombre in agenda:
         print(f'\nel contcato es:\n\nNombre: {nombre}, \nTeléfono: {telefono}\n')
     else:
         print(f'\nel nombre {nombre} no se ha encontrado\n')
 
+# La agenda se empaca en el archivo que creea el usuario
 def guardar_contactos(agenda, archivo_agenda):
     with open(archivo_agenda, 'w') as file:
         for nombre in agenda.items():
-            file.write({nombre}:{telefono})
+            file.write(f'{nombre},{telefono}')
 
 
-
+# La agenda se desempaca desde el archivo que creea el usuario
 def cargar_contactos(agenda, archivo_agenda):
      with open(archivo_agenda, 'r') as file:
-          for line in f:
-            nombre, telefono = line.strip().split(':')
-            agenda[nombre] = telefono
-            return agenda
+         pass
       
 
 agenda = {}
