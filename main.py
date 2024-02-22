@@ -1,5 +1,5 @@
 """
-/* Agenda creada por: Alex Garcia y Johan Agreda
+/* 
  * Se pide que desarrollen EN PAREJAS una aplicación de agenda de contactos en Python con las siguientes funcionalidades:
  * 1. Añadir contacto: Permite a los usuarios agregar un nuevo contacto con nombre y número de teléfono.
  * 2. Ver contactos: Muestra todos los contactos guardados.
