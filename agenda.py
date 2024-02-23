@@ -16,7 +16,7 @@ def ver_contactos(agenda):
     else:
         print("\nNo hay ningún contacto\n")
 
-def eliminar_contacto(agenda, nombre):
+def eliminar_contacto(agenda, nombre, telefono):
       # Verifica si el contacto a eliminar existe en la agenda
     if nombre == agenda:
         # Elimina el contacto de la agenda
@@ -25,7 +25,7 @@ def eliminar_contacto(agenda, nombre):
     else:
         print(f'\nel contacto {nombre} no existe\n')
 
-def buscar_contacto(agenda, nombre):
+def buscar_contacto(agenda, nombre, telefono):
     # Verifica si el contacto está en la agenda y lo muestra
     if nombre in agenda:
         print(f'\nel contcato es:\n\nNombre: {nombre}, \nTeléfono: {telefono}\n')
