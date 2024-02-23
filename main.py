@@ -1,4 +1,4 @@
-from agenda improt *
+from agenda import *
 
 # Menú de la aplicación de agenda de contactos
 while True:
