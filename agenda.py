@@ -50,4 +50,3 @@ def cargar_contactos(agenda, archivo_agenda):
     except FileNotFoundError:
         print("El archivo no existe")
     
-agenda = {}

@@ -2,6 +2,9 @@ from agenda import *
 
 # Menú de la aplicación de agenda de contactos
 def main():
+
+    agenda = {}
+    
     while True:
         print(" ############################# ")
         print(" # AGENDA - CONTACTOS - 2024 # ")
